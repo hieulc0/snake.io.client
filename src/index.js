@@ -7,6 +7,7 @@ import {
 
 import React from 'react';
 import ReactDOM from "react-dom/client";
+import Home from "./component/home";
 
 
 class App extends React.Component {
@@ -18,6 +19,9 @@ class App extends React.Component {
 						<li><Link to="/home">Home</Link></li>
 					</ul>
 				</div>
+				<Routes>
+					<Route exact path="/home" element={<Home />}></Route>
+				</Routes>
 			</Router>
 		);
 	}
