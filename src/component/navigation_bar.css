@@ -1,0 +1,44 @@
+.navigation-bar {
+	height: 60px;
+	width: 100%;
+	background: linear-gradient(135deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navigation-bar .start-panel {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.navigation-bar .start-panel .brand {
+	color: #fff;
+	font-size: 24px;
+	padding: 10px;
+}
+
+.navigation-bar .start-panel .nav-link {
+	color: #fff;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.navigation-bar .end-panel {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.navigation-bar .end-panel .item{
+	display: flex;
+	padding: 10px;
+}
+
+.navigation-bar .end-panel .item .icon{
+	color: #fff;
+}

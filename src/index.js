@@ -1,28 +1,11 @@
-import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Link,
-} from "react-router-dom";
-
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import Home from "./component/home";
-
+import Header from './component/header';
 
 class App extends React.Component {
 	render() {
 		return (
-			<Router>
-				<div>
-					<ul>
-						<li><Link to="/home">Home</Link></li>
-					</ul>
-				</div>
-				<Routes>
-					<Route exact path="/home" element={<Home />}></Route>
-				</Routes>
-			</Router>
+			<Header />
 		);
 	}
 }
