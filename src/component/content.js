@@ -1,5 +1,5 @@
 import React from "react";
-import {start} from "snake-wasm";
+import * as snake_wasm from "snake-wasm";
 
 class Content extends React.Component {
 	componentDidMount() {
@@ -8,20 +8,19 @@ class Content extends React.Component {
 
 	loadWasm = async () => {
 		try {
-			const wasm = await import("../../node_modules/snake-wasm/snake_wasm");
-			console.log("snake-wasm: ", wasm, start);
-			start();
-		//wasm
-		//	.default()
-		//	.then( () => {
-		//		wasm.start();
-		//	});
+			//const wasm = await import("../../node_modules/snake-wasm/snake_wasm");
+			console.log("wasm: ", snake_wasm);
+			//start();
+			//greet("hello world, from react");
+			snake_wasm
+				.default()
+				.then( () => {
+					snake_wasm.greet("hello, world! From react.");
+				});
 		} catch(err) {
 			console.error(`Unexpected error in loadWasm. [Message: ${err.message}]`);
 		}
-	};
-
-	render() {
+	}; render() {
 		return (
 			<div key="canvas"></div>
 		);
