@@ -20,14 +20,15 @@ class Content extends React.Component {
 			snakeWasm
 				.default()
 				.then( () => {
-					snakeWasm.greet("hello, world! From react.");
+					//snakeWasm.greet("hello, world! From react.");
 					let res = snakeWasm.start();
-					console.log("res of start() func: ", res);
+					//console.log("res of start() func: ", res);
 					this.setState({
-						canvas: res
+						canvas: res,
+					}, () => {
+						//console.log("current canvas: ", this.state.canvas);
+						this.myRef.current.appendChild(this.state.canvas);
 					});
-					console.log("current canvas: ", this.state.canvas);
-					this.myRef.current.appendChild(res);
 				});
 		} catch(err) {
 			console.error(`Unexpected error in loadWasm. [Message: ${err.message}]`);
